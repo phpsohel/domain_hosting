@@ -19,7 +19,7 @@ class AdminController extends Controller
     //Admin Dashboard
     public function index()
     {
-        return view('admin.dashboard');
+        return view('layout.index');
     }
     public function Logout()
     {

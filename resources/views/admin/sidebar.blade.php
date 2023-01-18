@@ -43,9 +43,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('admin.all-expire') }}" class="nav-link">
+                            <a href="{{ route('report.domain_expire') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Domain Expire List </p>
+                                <p>Domain Expire </p>
                             </a>
                         </li>
                     </ul>

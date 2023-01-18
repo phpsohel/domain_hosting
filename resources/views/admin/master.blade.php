@@ -25,7 +25,6 @@
 
     <!-- Sweet Alert -->
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
-    </link>
     <!-- toaster -->
     <link rel="stylesheet" href="{{asset('admin/toaster/css/toastr.css')}}">
 

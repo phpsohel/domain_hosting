@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('layout.main')
 @section('title', 'Domain')
 
     @if(session()->has('success'))
@@ -52,7 +52,7 @@
                                              <div class="row">
                                                  <div class="col-md-6" data-select2-id="30">
                                                      <div class="form-group" data-select2-id="29">
-                                                         <label>Company Name</label>
+                                                         <label>Customer Name</label>
                                                          <select name="cust_id"  class="form-control" style="width: 100%;">
                                                              @foreach($customers as $key => $customer)
                                                              <option value="{{ $customer->id }}">{{ $customer->name ?? ''}}</option>
@@ -187,7 +187,7 @@
                                         @foreach( $domains as $domain)
                                         <tr>
                                             <td>{{ ++$i}}</td>
-                                            <td>{{ $domain->customer->name ?? ''}} ({{ $domain->customer->name ?? '' }})</td>
+                                            <td>{{ $domain->customer->name ?? ''}} ({{ $domain->customer->company ?? '' }})</td>
 
                                             <td>{{ $domain->domain_name  ?? ''}}</td>
                                             <td>{{ $domain->domain_author_name ?? ''}}</td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class CustomerController extends Controller
@@ -113,5 +114,17 @@ class CustomerController extends Controller
         $delete = Customer::find($id);
         $delete->delete();
         return redirect()->back()->with('danger', 'Customer Delete Successfully!');
+    }
+    public function status($id)
+    {
+       $status = DB::table('customers')->where('id', $id)->first();
+       if($status->status){
+            $status = 0;
+       }else{
+        $status = 1;
+       }
+       $values = array('status' =>$status);
+       DB::table('customers')->where('id', $id)->update($values);
+       return redirect()->back();
     }
 }

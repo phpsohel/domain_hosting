@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\DomainController;
+use App\Http\Controllers\Admin\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 });
 Route::resource('customers', CustomerController::class);
+Route::get('admin/status-customer/{id}', [CustomerController::class,'status'])->name('admin.status-customer');
 Route::get('customers/details/{id}', [CustomerController::class, 'show'])->name('customers.details');
 Route::get('customers/delete/{id}', [CustomerController::class, 'destroy'])->name('customers.delete');
 
@@ -29,10 +31,15 @@ Route::get('customers/delete/{id}', [CustomerController::class, 'destroy'])->nam
 Route::resource('domains', DomainController::class);
 Route::get('domains/details/{id}', [DomainController::class, 'show'])->name('domains.details');
 Route::get('domains/delete/{id}', [DomainController::class, 'destroy'])->name('domains.delete');
+//Report
+Route::controller(ReportController::class)->group(function(){
+    Route::get('report/domain_expire', 'domain_expire')->name('report.domain_expire');
+    Route::post('report/domain_expire/search', 'domain_expire_search')->name('report.domain_expire.search');
+});
 
 Route::controller(AdminController::class)->group(function()
     {
-        Route::get('admin/dashboard', 'index')->name('admin.dashboard');
+        Route::get('/', 'index')->name('index');
         Route::get('admin/logout', 'Logout')->name('admin.logout');
         // Route::get('admin/all-customer', 'AllCustomer')->name('admin.all-customer');
         // Route::get('admin/add-customer', 'Add_customer')->name('admin.add-customer');

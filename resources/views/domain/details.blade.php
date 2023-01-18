@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('layout.main')
 @section('title', 'Customers')
 @section('content')
 <!doctype html>
@@ -70,64 +70,60 @@
 
                                     <img src="{{asset('public/image/acq.png')}}" style="width: 140px" alt="{{$show->name ?? ''}} ">
 
-                                    <h4 style="margin-top:10px;">({{ $show->name ?? '' }})</h4>
+                                    <h4 style="margin-top:10px;">({{ $show->customer->name  ?? '' }})</h4>
+
                                 </th>
                             </tr>
                         </thead>
                         <tbody class="table-bordered">
                             <tr>
-                                <th>Name :</th>
+                                <th>Customer Name :</th>
+
                                 <td style="text-align: center;">
-                                    <h4 class="">{{$show->name ?? ''}}</h4>
+                                    <h4 class="">{{$show->customer->name  ?? ''}}</h4>
+
                                 </td>
-                                <th>Company :</th>
-                                <td style="text-align: center;">{{ $show->company ?? ''}}</td>
-                            </tr>
-                            <tr>
-                                <th>Email-1 :</th>
-
-                                <td style="text-align: center;">{{$show->email_1 ?? ''}}</td>
-
-                                <th>Email-2 :</th>
-
-                                <td style="text-align: center;">{{$show->email_2 ?? ''}}</td>
+                                <th>Domain Name :</th>
+                                <td style="text-align: center;">{{ $show->domain_name ?? ''}}</td>
 
                             </tr>
                             <tr>
-                                <th>Phone-1 :</th>
+                                <th>Domain Author Name :</th>
+                                <td style="text-align: center;">{{$show->domain_author_name ?? ''}}</td>
+                                <th>Domain Yearly Price :</th>
+                                <td style="text-align: center;">{{$show->domain_yearly_price ?? ''}}/=</td>
+                            </tr>
+                            <tr>
+                                <th>Domain Start Date :</th>
 
-                                <td style="text-align: center;">{{$show->phone_1 ?? ''}}</td>
+                                <td style="text-align: center;">{{$show->domain_start_date ?? ''}}</td>
 
-                                <th>Phone-2 :</th>
-
-                                <td style="text-align: center;">{{ $show->phone_2 ?? ''}}</td>
+                                <th>Domain Exp: Date :</th>
+                                <td style="text-align: center;">{{$show->domain_expiry_date ?? ''}}</td>
 
                             </tr>
                             <tr>
-                                <th>Website :</th>
+                                <th>Hosting Space (GB) :</th>
+                                <td style="text-align: center;">{{$show->hosting_space ?? ''}}</td>
+                                <th>Hosting Author Name :</th>
+                                <td style="text-align: center;">{{ $show->hosting_author_name ?? ''}}</td>
 
-                                <td style="text-align: center;">{{ $show->website ?? '' }}</td>
-                                <th>Address :</th>
-                                <td style="text-align: center;">{{ $show->address ?? '' }}</td>
+
                             </tr>
                             <tr>
-                                <th>Status :</th>
-                                <td style="text-align: center;">
-                                    @if($show->status == '1')
-                                    <p class="text-success"> Active</p>
-                                    @elseif($show->payment_status == '2')
-                                    <p class="text-primary">Inactive</p>
-                                    @endif
-                                </td>
+                                <th>Hosting Start Date :</th>
+                                <td style="text-align: center;">{{ $show->hosting_start_date ?? '' }}</td>
 
+                                <th>Hosting Exp: Date :</th>
 
-                                <th></th>
-
-                                <td style="text-align: center;"></td>
+                                <td style="text-align: center;">{{ $show->hosting_expiry_date ?? '' }}</td>
 
                             </tr>
-                                <td style="text-align: center;"></td>
-                            </tr>
+                            <tr>
+                                <th>Hosting Yearly Price :</th>
+                                <td style="text-align: center;">{{ $show->hosting_yearly_price ??'' }}/=</td>
+                                <td></td>
+
                         </tbody>
                     </table>
                 </div>
