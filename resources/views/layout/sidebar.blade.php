@@ -36,7 +36,7 @@
                     <a href="{{ route('domains.index') }}" class="nav-link">
 
                         <i class="fa-solid fa-hourglass-end"></i>
-                        <p>Domain List</p>
+                        <p>Domains</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -53,6 +53,42 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item border-bottom">
+                    <a href="" class="nav-link">
+                        <i class="fa thin fa-gear"></i>
+                        <p>Settings <i class="fas fa-angle-left right"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item border-bottom fa-carret">
+
+                            <a href="" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Users</p>
+                            </a>
+                        </li>
+                        <li class="nav-item border-bottom fa-carret">
+
+                            <a href="" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Role Permission</p>
+                            </a>
+                        </li>
+                        <li class="nav-item border-bottom">
+                            <a href="" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Send Notification</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item border-bottom">
+                            <a href="" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>General Settings</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
         </nav>
     </div>

@@ -187,7 +187,13 @@
                                         @foreach( $domains as $domain)
                                         <tr>
                                             <td>{{ ++$i}}</td>
-                                            <td>{{ $domain->customer->name ?? ''}} ({{ $domain->customer->company ?? '' }})</td>
+                                            <td>
+                                                @if(!empty($domain->customer->name ?? '') )
+                                                {{ $domain->customer->name ?? ''}} ({{ $domain->customer->company ?? '' }})
+                                                @else
+                                                   <p>!! Name Deleted !!</p>
+                                                @endif
+                                            </td>
 
                                             <td>{{ $domain->domain_name  ?? ''}}</td>
                                             <td>{{ $domain->domain_author_name ?? ''}}</td>
